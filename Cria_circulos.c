@@ -36,19 +36,21 @@ formula:  d = sqrt(((x2-x1)**2)+((y2-y1)**2))*/
 
 /*Estruturas de dados*/
 
-typedef struct ponto{
+typedef struct ponto
+{
     int x, y;
-}coordenadas; 
+} coordenadas; 
 
-typedef struct circle{
+typedef struct circle
+{
     char nome[10];
     coordenadas center;
     float radius;
 } Circulo;
 
 
-Circulo *criaCirculo(char nome_circulo[10], float a, float b, float r){
-    
+Circulo *criaCirculo(char nome_circulo[10], float a, float b, float r)
+{
     Circulo *p; p = malloc(sizeof(Circulo));  
     strcpy(p->nome, nome_circulo);
     p->center.x = a;
@@ -60,8 +62,8 @@ Circulo *criaCirculo(char nome_circulo[10], float a, float b, float r){
 
 /*Funcoes*/
 
-int contem(Circulo *c1, Circulo *c2){
-
+int contem(Circulo *c1, Circulo *c2)
+{
     int x, co1, co2, d1, d2;
     d1 = c2->center.x - c1->center.x;
     d2 = c2->center.y - c1->center.y;
@@ -72,7 +74,8 @@ int contem(Circulo *c1, Circulo *c2){
 
 /* Main */
 
-int main(void){
+int main(void)
+{
     Circulo * c1, * c2, * c3;  
     c1 = criaCirculo("Circulo01",3.0,4.0,2.0);  
     c2 = criaCirculo("Circulo02",3.0,3.0,1.0);  
